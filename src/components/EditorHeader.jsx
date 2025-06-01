@@ -1,22 +1,23 @@
 import { FileText, Save, Download, Share } from 'lucide-react';
-
+import { useRef } from 'react';
+import { useEditor } from '@tiptap/react';
 import StarterKit from '@tiptap/starter-kit';
-
+import html2pdf from 'html2pdf.js';
+import { content } from '../Editor'
 import pdfMake from "pdfmake/build/pdfmake";
-
+import pdfFonts from "pdfmake/build/vfs_fonts";
 import htmlToPdfmake from "html-to-pdfmake";
 import { useEditorContent } from '../ContextAPI/EditorContentContext';
 
 const EditorHeader = () => {
+
   const { editorHtml } = useEditorContent();
-  
-  
+  console.log(editorHtml);
+  const editorRef = useRef(null);
 
  
 
   const handleExportPDF = () => {
-    
-    console.log(editorHtml);
     
     pdfMake.fonts = {
       Roboto: {
@@ -51,7 +52,7 @@ const EditorHeader = () => {
 
 
   return (
-    <div className="bg-gray-100 border-b border-gray-200 px-6 py-4">
+    <div className="bg-white border-b border-gray-200 px-6 py-4">
       <div className="flex items-center justify-between max-w-6xl mx-auto">
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
@@ -63,7 +64,7 @@ const EditorHeader = () => {
 
         <div className="flex items-center gap-2">
           
-          <button className="flex items-center px-3 py-1 font-bold text-sm text-gray-600 hover:text-gray-900 hover:cursor-pointer  hover:bg-gray-100 rounded"
+          <button className="flex items-center px-3 py-1 text-sm text-gray-600 hover:text-gray-900 hover:cursor-pointer hover:bg-gray-100 rounded"
           onClick={handleExportPDF}
           >
             <Download className="h-4 w-4 mr-2" />
