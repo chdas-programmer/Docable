@@ -1,0 +1,14 @@
+
+
+@import "tailwindcss";
+
+#body {
+  background-color: #1a1919;
+}
+
+.editor-container {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  min-height: 200px;
+}

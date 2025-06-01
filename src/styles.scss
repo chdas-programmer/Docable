@@ -1,0 +1,187 @@
+:root {
+  --background: #f9fafb;
+  --foreground: #1f2937;
+  --primary: #3b82f6;
+  --gray: #e5e7eb;
+  --gray-3: #d1d5db;
+  --gray-2: #e5e7eb;
+  --white: #ffffff;
+  --black: #111827;
+  --purple-light: #f3e8ff;
+}
+
+.editor-container {
+  max-width: 860px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--background);
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+  background: var(--white);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.menu-bar .button-group button {
+  background: var(--white);
+  border: 1px solid var(--gray-2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0.5%;
+  
+
+  &:hover {
+    background-color: var(--gray);
+  }
+
+  &.is-active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.tiptap {
+  background: var(--violate);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  min-height: 200px;
+  border: 1px solid var(--gray);
+  line-height: 1.65;
+  color: var(--black);
+}
+
+/* Keep your existing tiptap styles below this line */
+
+.tiptap {
+  :first-child {
+    margin-top: 0;
+  }
+
+  /* List styles */
+  ul{
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+    
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+
+  /* Heading styles */
+  h1, 
+  h2, 
+  h3, 
+  h4, 
+  h5, 
+  h6 {
+    line-height: 1.1;
+    margin-top: 2.5rem;
+    text-wrap: pretty;
+  }
+
+  h1, 
+  h2 {
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 { 
+    font-size: 1.4rem; 
+  }
+
+  h2 { 
+    font-size: 1.2rem; 
+  }
+
+  h3 { 
+    font-size: 1.1rem; 
+  }
+
+  h4, 
+  h5, 
+  h6 { 
+    font-size: 1rem; 
+  }
+
+  /* Code and preformatted text styles */
+  code {
+    background-color: var(--purple-light);
+    border-radius: 0.4rem;
+    color: var(--black);
+    font-size: 0.85rem;
+    padding: 0.25em 0.3em;
+  }
+
+  pre {
+    background: var(--black);
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-family: 'JetBrainsMono', monospace;
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+
+    code {
+      background: none;
+      color: inherit;
+      font-size: 0.8rem;
+      padding: 0;
+    }
+  }
+
+  blockquote {
+    border-left: 3px solid var(--gray-3);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid var(--gray-2);
+    margin: 2rem 0;
+  }
+}
+
+.tiptap {
+  ul {
+    padding: 0 1rem;
+    margin: 1.25rem 1rem 1.25rem 0.4rem;
+
+    /** FIX: Ensure bullets appear **/
+    list-style-type: disc;
+    list-style-position: outside;
+
+    /* Optional: reset display if overridden globally */
+    display: block;
+
+    li {
+      /* Optional: indent bullets manually */
+      margin-left: 1rem;
+    }
+
+    li p {
+      margin-top: 0.25em;
+      margin-bottom: 0.25em;
+    }
+  }
+}
