@@ -9,9 +9,8 @@ import React from 'react'
 import SlashCommand from './extensions/SlashCommandExtension'
 import suggestion from './extensions/slashCommand'
 import CustomShortcuts from './extensions/CustomShortcuts'
-// import { generateMarkdown } from '@tiptap/pm/markdown'
-// import { defaultMarkdownSerializer } from '@tiptap/pm/markdown'
 import Placeholder from '@tiptap/extension-placeholder'
+import { EditorContentProvider, useEditorContent } from './ContextAPI/EditorContentContext'
 
 const MenuBar = () => {
   const { editor } = useCurrentEditor()
@@ -94,25 +93,49 @@ const extensions = [
   }),
   SlashCommand.configure({ suggestion }),
   CustomShortcuts,
-  Placeholder.configure({
-    placeholder: 'Type something awesome…',
-  }),
+  
 
   
 ]
 
 
+const EditorWrapper = () => {
+  const { setEditorHtml,editorHtml } = useEditorContent()
+
+  return (
+    <EditorProvider
+      slotBefore={<MenuBar />}
+      extensions={extensions}
+      content={editorHtml}
+      editorProps={{
+        attributes: {
+          class: 'editor-content',
+        },
+      }}
+      onUpdate={({ editor }) => {
+        setEditorHtml(editor.getHTML())
+        console.log(editorHtml);
+      }
+      
+    
+    }
+    
+    />
+  )
+}
 
 
 
 
-const content = `Hello Editors. Tiptap welcomes You!` // same as before
+
+
+export const content = `Hello Editors. Tiptap welcomes You!` // same as before
 
 export default function App() {
   return (
     <div className="editor-container">
-      <EditorProvider slotBefore={<MenuBar />} extensions={extensions} content={content} />
-
+      
+      <EditorWrapper />
     </div>
   )
 }
