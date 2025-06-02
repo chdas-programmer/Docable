@@ -27,7 +27,7 @@ Docable is a rich-text editor built using **React**, **TipTap**, and **Tailwind 
 
   ## 🚀 Demo
 
-- 🎥 [Watch the video demo](https://www.loom.com/share/25d1116867264a849f84591a37d60f08)
+- 🎥 [Watch the video demo](https://www.loom.com/share/87872e6e73d64aac8cd26a10d09aedf3?sid=b6e475ee-c859-4d1c-8811-6d723e1e28b3)
 - 🌐 [Try it live](https://docable-nu.vercel.app)
 
 
