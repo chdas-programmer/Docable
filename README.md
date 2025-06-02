@@ -8,7 +8,7 @@ Docable is a rich-text editor built using **React**, **TipTap**, and **Tailwind 
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/yourusername/docable.git
+   git clone https://github.com/chdas-programmer/Docable.git
    cd docable
    npm install
 ## 🧠 Approach & Key Decisions
