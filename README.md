@@ -1,12 +1,37 @@
-# React + Vite
+# Docable 📝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Docable is a rich-text editor built using **React**, **TipTap**, and **Tailwind CSS**, featuring a smooth UI, slash-command support, and PDF export capability.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Setup Instructions
 
-## Expanding the ESLint configuration
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/yourusername/docable.git
+   cd docable
+   npm install
+## 🧠 Approach & Key Decisions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Rich Text Editing with TipTap**  
+  TipTap was selected for its modular architecture and ease of integration with React. We used `@tiptap/starter-kit` along with extensions for **bold**, **italic**, **code**, and **headings (H1, H2)** to provide a clean and focused writing experience. 
+
+- **Slash Commands**  
+  Inspired by modern editors like Notion, we implemented a slash command system using `@tiptap/suggestion` and `ReactRenderer`. It provides a fast and intuitive way for users to insert blocks. The dropdown is powered by `tippy.js` and `@floating-ui/react` for accurate positioning.
+
+- **PDF Export Functionality**  
+  We integrated `pdfmake` to allow users to generate a PDF version of the editor content. This required transforming the HTML content into a suitable format and preserving structure and basic styles.
+
+- **Tailwind CSS + Vite**  
+  Tailwind was used for utility-first, responsive UI design.
+
+  ## 🚀 Demo
+
+- 🎥 [Watch the video demo](https://www.loom.com/share/25d1116867264a849f84591a37d60f08)
+- 🌐 [Try it live](https://docable-nu.vercel.app)
+
+
+  
+
+
+
